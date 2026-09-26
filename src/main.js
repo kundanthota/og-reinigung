@@ -176,8 +176,7 @@ function renderSite() {
         </form>
       </section>
     </main>
-    <footer><div class="footer-brand"><span class="brand-mark">O<span>&</span>G</span><p>Vyara ${currentLanguage === 'de' ? 'Reinigung' : 'Cleaning'}<br><small>${t.footerTagline}</small></p></div><div class="footer-links"><a href="#leistungen">${t.nav[0]}</a><a href="#warum-wir">${t.nav[1]}</a><a href="#kontakt">${t.nav[2]}</a></div><div class="footer-meta"><span>© ${new Date().getFullYear()} O&G Vyara Reinigung</span><span>${t.footerLocation}</span></div></footer>
-    <a class="floating-call" href="tel:+4917631464167" aria-label="${t.phone}"><i data-lucide="phone"></i></a>`;
+    <footer><div class="footer-brand"><span class="brand-mark">O<span>&</span>G</span><p>Vyara ${currentLanguage === 'de' ? 'Reinigung' : 'Cleaning'}<br><small>${t.footerTagline}</small></p></div><div class="footer-links"><a href="#leistungen">${t.nav[0]}</a><a href="#warum-wir">${t.nav[1]}</a><a href="#kontakt">${t.nav[2]}</a></div><div class="footer-meta"><span>© ${new Date().getFullYear()} O&G Vyara Reinigung</span><span>${t.footerLocation}</span></div></footer>`;
 
   createIcons({ icons });
   bindInteractions(t);
@@ -216,6 +215,7 @@ function bindInteractions(t) {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
   }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
   document.querySelector('#quoteForm').addEventListener('submit', (event) => {
     event.preventDefault();
     const form = event.currentTarget;
